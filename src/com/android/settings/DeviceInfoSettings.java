@@ -51,14 +51,12 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
     private static final String KEY_TERMS = "terms";
     private static final String KEY_LICENSE = "license";
     private static final String KEY_COPYRIGHT = "copyright";
-    private static final String KEY_SYSTEM_UPDATE_SETTINGS = "system_update_settings";
     private static final String PROPERTY_URL_SAFETYLEGAL = "ro.url.safetylegal";
     private static final String KEY_KERNEL_VERSION = "kernel_version";
     private static final String KEY_BUILD_NUMBER = "build_number";
     private static final String KEY_DEVICE_MODEL = "device_model";
     private static final String KEY_BASEBAND_VERSION = "baseband_version";
     private static final String KEY_FIRMWARE_VERSION = "firmware_version";
-    private static final String KEY_UPDATE_SETTING = "additional_system_update_settings";
 
     long[] mHits = new long[3];
 
@@ -99,21 +97,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
                 Utils.UPDATE_PREFERENCE_FLAG_SET_TITLE_TO_MATCHING_ACTIVITY);
         Utils.updatePreferenceToSpecificActivityOrRemove(act, parentPreference, KEY_TEAM,
                 Utils.UPDATE_PREFERENCE_FLAG_SET_TITLE_TO_MATCHING_ACTIVITY);
-
-        // These are contained by the root preference screen
-        parentPreference = getPreferenceScreen();
-        Utils.updatePreferenceToSpecificActivityOrRemove(act, parentPreference,
-                KEY_SYSTEM_UPDATE_SETTINGS,
-                Utils.UPDATE_PREFERENCE_FLAG_SET_TITLE_TO_MATCHING_ACTIVITY);
-        Utils.updatePreferenceToSpecificActivityOrRemove(act, parentPreference, KEY_CONTRIBUTORS,
-                Utils.UPDATE_PREFERENCE_FLAG_SET_TITLE_TO_MATCHING_ACTIVITY);
-
-        // Read platform settings for additional system update setting
-        boolean isUpdateSettingAvailable =
-                getResources().getBoolean(R.bool.config_additional_system_update_setting_enable);
-        if (isUpdateSettingAvailable == false) {
-            getPreferenceScreen().removePreference(findPreference(KEY_UPDATE_SETTING));
-        }
     }
 
     @Override
