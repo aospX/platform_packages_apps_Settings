@@ -56,6 +56,17 @@
         android:breadCrumbTitle="@string/wireless_networks_settings_title"
         android:fragment="com.android.settings.WirelessSettings"
         android:icon="@drawable/empty_icon" />
+    
+    <!-- Performance Settings -->
+    <header android:title="@string/header_category_performance" />
+    
+    <!-- CPU Settings -->
+    <header
+        android:id="@+id/performance_settings"
+        android:title="@string/cpu_settings_title"
+        android:fragment="com.android.settings.PerformanceSettings"
+        android:icon="@drawable/ic_settings_cpu">
+    </header>
 
     <!-- DEVICE -->
     <header android:title="@string/header_category_device" />
