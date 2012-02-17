@@ -49,6 +49,12 @@
                 android:dialogTitle="@string/dialog_title_font_size" />
 
         <CheckBoxPreference
+            android:key="volume_wake"
+            android:title="@string/volume_wake_title"
+            android:summary="@string/volume_wake_summary" 
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
             android:key="notification_pulse"
             android:title="@string/notification_pulse_title"
             android:persistent="false" />
