@@ -1,10 +1,13 @@
 package com.android.settings;
 
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.preference.ListPreference;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
+import android.provider.Settings;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -25,6 +28,10 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
     public static final String FREQ_MIN_FILE = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq";
     public static final String SOB_PREFERENCE = "sob_preference";
 
+    private static final String DISABLE_BOOTANIMATION_PREF = "pref_disable_bootanimation";
+    private static final String DISABLE_BOOTANIMATION_PERSIST_PROP = "persist.sys.nobootanimation";
+    private static final String DISABLE_BOOTANIMATION_DEFAULT = "0";
+
     private static final String TAG = "PerformanceSettings";
 
     private String mGovernorFormat;
@@ -34,6 +41,7 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
     private ListPreference mGovernorPref;
     private ListPreference mMinFrequencyPref;
     private ListPreference mMaxFrequencyPref;
+    CheckBoxPreference mDisableBootanimPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -86,6 +94,10 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
         mMaxFrequencyPref.setValue(temp);
         mMaxFrequencyPref.setSummary(String.format(mMaxFrequencyFormat, toMHz(temp)));
         mMaxFrequencyPref.setOnPreferenceChangeListener(this);
+
+        mDisableBootanimPref = (CheckBoxPreference) findPreference(DISABLE_BOOTANIMATION_PREF);
+             String disableBootanimation = SystemProperties.get(DISABLE_BOOTANIMATION_PERSIST_PROP, DISABLE_BOOTANIMATION_DEFAULT);
+        mDisableBootanimPref.setChecked("1".equals(disableBootanimation));
     }
 
     @Override
@@ -135,6 +147,19 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
         }
         return false;
     }
+
+        @Override
+        public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
+                                                Preference preference) {
+            if (preference == mDisableBootanimPref) {
+                SystemProperties.set(DISABLE_BOOTANIMATION_PERSIST_PROP,
+                            mDisableBootanimPref.isChecked() ? "1" : "0");
+                return true;
+                        
+            }
+                    
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
+        }
 
     public static String readOneLine(String fname) {
         BufferedReader br;

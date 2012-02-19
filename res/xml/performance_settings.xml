@@ -25,4 +25,13 @@
             android:title="@string/cpu_set_on_boot"
             android:summary="@string/cpu_set_on_boot_summary" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="@string/system_settings_title">
+	
+        <CheckBoxPreference android:key="pref_disable_bootanimation"
+            android:title="@string/pref_disable_bootanimation_title"
+            android:summary="@string/pref_disable_bootanimation_summary" />
+	
+    </PreferenceCategory>
 </PreferenceScreen>

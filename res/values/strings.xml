@@ -26,7 +26,7 @@
 
     <!-- Category headings in left-pane header menu --> <skip />
     <!-- Performance Settings main menu category heading. (Settings, Tools...). [CHAR LIMIT=40] -->
-    <string name="header_category_performance">PERFORMANCE</string>
+    <string name="header_category_ax">AX CONTROL</string>
     <!-- Settings main menu category heading. Wireless and networks (Wi-Fi, Bluetooth, data usage...). [CHAR LIMIT=40] -->
     <string name="header_category_wireless_networks">WIRELESS &amp; NETWORKS</string>
     <!-- Settings main menu category heading. Device (Sound, display, battery, applications...). [CHAR LIMIT=40] -->
@@ -1155,8 +1155,9 @@
     <string name="android_beam_explained">When this feature is turned on, you can beam app content to another NFC-capable device by holding the devices close together. For example, you can beam Browser pages, YouTube videos, People contacts, and more.\n\nJust bring the devices together (typically back to back) and then touch your screen. The app determines what gets beamed.</string>
     
     <!-- Performance Header --> <skip />
-    <string name="performance_prefs_title">CPU Settings</string>
+    <string name="performance_prefs_title">Performance</string>
     
+    <!-- CPU Settings --> <skip/>
     <string name="cpu_settings_title">CPU Settings</string>
     <string name="cpu_title">CPU Settings</string>
     <string name="cpu_summary">Governor and clock settings</string>
@@ -1168,6 +1169,11 @@
     <string name="cpu_max_freq_summary">Maximum CPU frequency\nCurrently: %s</string>
     <string name="cpu_set_on_boot">Set on boot</string>
     <string name="cpu_set_on_boot_summary">Restore CPU settings on boot</string>
+
+    <!-- System Settings --> <skip />
+    <string name="system_settings_title">System</string>
+    <string name="pref_disable_bootanimation_title">Disable boot animation</string>
+    <string name="pref_disable_bootanimation_summary">Disable boot animation for faster boot time</string>
 
     <!-- Wi-Fi Settings --> <skip />
     <!-- Used in the 1st-level settings screen to turn on Wi-Fi -->
