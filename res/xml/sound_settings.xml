@@ -88,6 +88,11 @@
             android:title="@string/haptic_feedback_enable_title"
             android:defaultValue="true" />
 
+    <CheckBoxPreference
+            android:key="volume_music_controls"
+            android:title="@string/volume_music_controls_title"
+            android:defaultValue="false" />
+
     <ListPreference
             android:key="emergency_tone"
             android:title="@string/emergency_tone_title"
