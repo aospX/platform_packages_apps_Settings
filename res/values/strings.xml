@@ -41,12 +41,6 @@
     <string name="turn_on_radio">Turn on radio</string>
     <!-- Phone Info screen. Button label to turn off the radio . Only shown in diagnostic screen, so precise translation is not needed. -->
     <string name="turn_off_radio">Turn off radio</string>
-    <!-- Substring of status line when the network is a ad-hoc network and
-         string is listed first -->
-    <string name="wifi_adhoc_first_item">Ad-hoc network</string>
-    <!-- Substring of wifi status when the network is a ad-hoc network and
-         string is listed after a wifi_secured_* string-->
-    <string name="wifi_adhoc_second_item">\u0020(ad-hoc network)</string>
 
     <!-- Phone SMS over IMS on. Only shown in diagnostic screen, so precise translation is not needed. -->
     <string name="sms_over_ims_on">Turn on SMS over IMS</string>
