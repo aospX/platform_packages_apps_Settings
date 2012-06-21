@@ -3857,4 +3857,8 @@ found in the list of installed apps.</string>
     "system_update_settings_list_item_title" in this project. [CHAR LIMIT=25] -->
     <string name="additional_system_update_settings_list_item_title">Additional system updates</string>
 
+    <!-- Cell Broadcast settings title [CHAR LIMIT=50] -->
+    <string name="cell_broadcast_settings">Cell broadcasts</string>
+    <!-- Cell Broadcast settings description [CHAR LIMIT=100] -->
+    <string name="cell_broadcast_settings_summary">Select the types of emergency alerts to display.</string>
 </resources>
