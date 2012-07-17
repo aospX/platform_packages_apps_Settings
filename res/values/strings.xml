@@ -2736,7 +2736,7 @@ found in the list of installed apps.</string>
     <string name="adb_over_network">ADB over Wi-Fi</string>
     <string name="adb_over_network_summary">Enable debugging over Wi-Fi</string>
     <!-- Warning for Adb over Network -->
-    <string name="adb_over_network_warning">WARNING: Only use this feature when connected to trusted networks.\n\nDo you really want to enable this function?</string>
+    <string name="adb_over_network_warning">WARNING: Only use this feature when connected to trusted networks.\n\nTo Connect:\nadb connect IP:port\n\nDo you really want to enable this function?</string>
     <!-- Development settings: title for the field that shows the "App ID" development identifier
          for this device. [CHAR LIMIT=40] -->
     <string name="verifier_device_identifier">Development device ID</string>
