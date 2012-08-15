@@ -68,6 +68,16 @@
         android:icon="@drawable/ic_settings_performance">
     </header>
 
+    <!-- OTAUpdater Header -->
+    <header
+        android:title="@string/otaupdate_settings_title"
+        android:icon="@drawable/ic_settings_updates">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.updater.ota"
+            android:targetClass="com.updater.ota.OTAUpdaterActivity" />
+    </header>
+
     <!-- DEVICE -->
     <header android:title="@string/header_category_device" />
 

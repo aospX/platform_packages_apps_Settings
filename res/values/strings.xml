@@ -1175,6 +1175,9 @@
     <string name="pref_disable_bootanimation_title">Disable boot animation</string>
     <string name="pref_disable_bootanimation_summary">Disable boot animation for faster boot time</string>
 
+    <!-- OTA Updater Settings --> <skip />
+    <string name="otaupdate_settings_title">OTA Updater</string>
+
     <!-- Wi-Fi Settings --> <skip />
     <!-- Used in the 1st-level settings screen to turn on Wi-Fi -->
     <string name="wifi_quick_toggle_title">Wi-Fi</string>
