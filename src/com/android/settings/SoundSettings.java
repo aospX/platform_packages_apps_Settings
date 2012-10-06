@@ -65,6 +65,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_EMERGENCY_TONE = "emergency_tone";
     private static final String KEY_SOUND_SETTINGS = "sound_settings";
     private static final String KEY_LOCK_SOUNDS = "lock_sounds";
+    private static final String PREF_LOCKSCREEN_VIBRATE = "lockscreen_vibrate";
     private static final String KEY_RINGTONE = "ringtone";
     private static final String KEY_NOTIFICATION_SOUND = "notification_sound";
     private static final String KEY_CATEGORY_CALLS = "category_calls";
@@ -89,6 +90,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mHapticFeedback;
     private Preference mMusicFx;
     private CheckBoxPreference mLockSounds;
+    private CheckBoxPreference mLockscreenVibrate;
     private CheckBoxPreference mVolumeMusic;
     private Preference mRingtonePreference;
     private Preference mNotificationPreference;
@@ -163,6 +165,9 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mLockSounds.setPersistent(false);
         mLockSounds.setChecked(Settings.System.getInt(resolver,
                 Settings.System.LOCKSCREEN_SOUNDS_ENABLED, 1) != 0);
+        mLockscreenVibrate = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_VIBRATE);
+        mLockscreenVibrate.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.LOCKSCREEN_VIBRATE_DISABLED, 1) == 1);
 
         mVolumeMusic = (CheckBoxPreference) findPreference(PREF_VOLUME_MUSIC);
         mVolumeMusic.setChecked(Settings.System.getInt(resolver,
@@ -332,6 +337,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             }
             Settings.System.putInt(getContentResolver(), Settings.System.SOUND_EFFECTS_ENABLED,
                     mSoundEffects.isChecked() ? 1 : 0);
+        } else if (preference == mLockscreenVibrate) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_VIBRATE_DISABLED,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
 
         } else if (preference == mHapticFeedback) {
             Settings.System.putInt(getContentResolver(), Settings.System.HAPTIC_FEEDBACK_ENABLED,

@@ -1572,6 +1572,8 @@
     <!-- Sound settings screen, setting check box label -->
     <string name="lock_sounds_enable_title">Screen lock sound</string>
     <!-- Sound settings screen, setting check box label -->
+    <string name="lockscreen_vibrate_disabled_title">Screen lock vibrate</string>
+    <!-- Sound settings screen, setting check box label -->
     <string name="haptic_feedback_enable_title">Vibrate on touch</string>
     <!-- Setting for volume rocker music controls -->
     <string name="volume_music_controls_title">Volume music controls</string>
